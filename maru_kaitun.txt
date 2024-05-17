@@ -1,0 +1,24 @@
+local ScreenGui1 = Instance.new("ScreenGui")
+local TextButton1 = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
+
+ScreenGui1.Name = "TextButton"
+ScreenGui1.Parent = game.CoreGui
+ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextButton1.Parent = ScreenGui1
+TextButton1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextButton1.BorderSizePixel = 0
+TextButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+TextButton1.Size = UDim2.new(0, 50, 0, 50)
+TextButton1.Draggable = true
+TextButton1.Text = "ON"
+TextButton1.MouseButton1Down:connect(function()
+  game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+  game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+end)
+UICorner.Parent = TextButton1
+UIStroke.Color = Color3.fromRGB(252, 3, 161)
+UIStroke.Thickness = 1.5
+UIStroke.Parent = TextButton1
